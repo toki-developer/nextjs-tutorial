@@ -24,7 +24,7 @@ export function getSortedPostsData() {
         // データを id と合わせる
         return {
             id,
-            ...matterResult.data
+            ...(matterResult.data as { date: string; title: string})
         }
     })
 
@@ -80,6 +80,6 @@ export function getAllPostIds() {
     return {
       id,
       contentHtml,
-      ...matterResult.data
+      ...(matterResult.data as { date: string; title: string })
     }
   }
